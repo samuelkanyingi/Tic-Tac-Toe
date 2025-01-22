@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./tic.css">
+</head>
+<body>
+    <div id="scoreboard" style="text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 10px; background-color: #f8f9fa; padding: 10px;
+    border-radius: 5px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        Player X: <span id="x-score" style="color: #0275d8;">0</span> | Player O: <span id="o-score" style="color: #81c3fd;">0</span>
+      </div>
+      <div id="game-board">
+        <!-- Your game content, like the game board, goes here -->
+      </div>
+    <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+    <div class="winning-message" id="winningMessage">
+        <div class="winningMessageText" id="winningMessageTextElement"></div>
+        <button id="restartButton">restart</button>
+    </div>
+    <script src="./tic.js"></script>
+    
+</body>
+</html>
