@@ -1,0 +1,98 @@
+:root {
+    --cell-size: 100px;
+    --color: #81c3fd;
+    --color-set: #0275d8;
+    --line-width: 6px;
+}
+body {
+    margin: 0;
+}
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.cell:nth-child(1),.cell:nth-child(2),.cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7) {
+    border-left: none;
+}
+.cell:nth-child(3), .cell:nth-child(6), .cell:nth-child(9) {
+    border-right: none;
+}
+.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+    border-bottom: none;
+}
+.cell.x, .cell.circle {
+    cursor: not-allowed;
+}
+
+.cell.x::before {
+content: 'X';
+font-size: 3rem; /* Adjust size as needed */
+color: var(--color); /* Use your defined color */
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+/*for cir hover circle*/
+.board.circle .cell:not(.circle):not(.x):hover {
+    background-color: radial-gradient(var(--color) 60%, transparent 60%);
+}
+.cell.circle::before {
+content: 'O';
+font-size: 3rem; /* Adjust size as needed */
+color: var(--color-set); /* Use your defined color for O */
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.winning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.7);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+    z-index: 9999;
+}
+.winning-message button {
+    border-radius: 10px;
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid var(--color-set);
+    padding: .25em .5em;
+    cursor: pointer;
+}
+.winning-message button:hover {
+    background-color: var(--color-set);
+    color: white;
+    border-color: white;
+}
+.winning-message.show {
+    display: flex;
+}
