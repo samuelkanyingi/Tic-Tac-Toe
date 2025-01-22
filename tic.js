@@ -1,3 +1,4 @@
+console.log("JavaScript is running!");
 const playerXClass = 'x';
 const playerOClass = 'circle';
 const winning_Combo = [
